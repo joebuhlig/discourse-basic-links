@@ -61,6 +61,7 @@ after_initialize do
 
 	end
 
+	add_to_serializer(:site, :basic_links_category_ids) { CategoryCustomField.where(name: "enable_basic_links", value: "true").pluck(:category_id) }
 	add_to_serializer(:topic_list_item, :basic_link_url) { object.basic_link_url }
 	add_to_serializer(:topic_list_item, :can_add_basic_link) { object.can_add_basic_link }
 

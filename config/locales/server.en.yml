@@ -1,3 +1,5 @@
 en:
   site_settings: 
     basic_links_enabled: 'Allow users to add a link to topics?'
+    basic_links_open_in_external_tab: 'Open urls in basic links in new tabs?'
+    basic_links_show_onebox_in_post: 'Show the onebox window in the post?'

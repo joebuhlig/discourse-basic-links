@@ -2,3 +2,9 @@ plugins:
   basic_links_enabled:
     default: true
     client: true
+  basic_links_open_in_external_tab:
+    default: true
+    client: true
+  basic_links_show_onebox_in_post:
+    default: true
+    client: true

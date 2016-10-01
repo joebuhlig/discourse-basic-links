@@ -1,7 +1,7 @@
 import { createWidget } from 'discourse/widgets/widget';
 import { h } from 'virtual-dom';
 
-export default createWidget('basic-link-url', {
+export default createWidget('basic-link', {
   tagName: 'div.basic-link-wrapper',
   buildKey: () => 'basic-link-url',
 
