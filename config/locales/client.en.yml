@@ -1,8 +1,0 @@
-en:
-  js:
-    basic_links:
-      allow_basic_links: "Allow users to add links in this category"
-      placeholder: "Enter link URL (ex: http://joebuhlig.com)"
-      error:
-          link_missing: 'Link is missing.'
-          invalid: "Not a valid link."
