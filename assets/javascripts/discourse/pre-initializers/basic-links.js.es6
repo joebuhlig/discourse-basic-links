@@ -102,8 +102,8 @@ export default {
           var category = this.site.categories.findProperty('id', model.get('categoryId'));
           return Boolean(category && category.basic_links_enabled);
         }
-        if (topic.can_add_link) {return true}
-        if (model && model.get('categoryId') && this.site.categories.findProperty('id', model.get('categoryId')).basic_links_enabled){return true}
+        if (topic.can_add_link && (model.get('action') !== Composer.REPLY)) {return true}
+        if (model && model.get('categoryId') && (model.get('action') !== Composer.REPLY) && this.site.categories.findProperty('id', model.get('categoryId')).basic_links_enabled){return true}
         return Boolean(topic.can_add_link && (model.get('action') === Composer.EDIT))
       }.property('model.topic', 'model.categoryId', 'model.tags', 'model.post'),
 
