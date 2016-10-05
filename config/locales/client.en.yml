@@ -1,0 +1,8 @@
+en:
+  js:
+    basic_links:
+      placeholder: "Enter URL (http://joebuhlig.com)"
+      category:
+        enable_basic_links: "Allow users to add links in this category?"
+      composer:
+        missing_link: "Please enter an URL."

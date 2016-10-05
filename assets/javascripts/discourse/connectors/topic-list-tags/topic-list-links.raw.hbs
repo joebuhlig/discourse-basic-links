@@ -1,0 +1,5 @@
+{{#if context.siteSettings.basic_links_enabled}}
+    {{#if context.topic.can_add_link}}
+      <span class="basic-links"><a href="{{context.topic.basic_links_url}}">{{context.topic.basic_links_domain}}</a></span>
+    {{/if}}
+{{/if}}

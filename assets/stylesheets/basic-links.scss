@@ -1,0 +1,41 @@
+#reply-control.edit-link-category {
+  &.open {
+    height: 210px;
+  }
+  .wmd-controls {
+    display: none;
+  }
+}
+
+#reply-control input.basic-links-url-field {
+  margin: 6px 10px 3px 0;
+  padding: 8px 10px;
+  width: 99%;
+  border: 1px solid white;
+  @media (min-width: 992px) {
+    & {
+      width: 860px;
+      color: #222222;
+      padding: 7px 10px;
+    }
+  }
+}
+
+a.featured-link {
+  display: inline-block;
+  text-transform: lowercase;
+  color: #858585;
+  font-size: 0.875rem;
+
+  &::before {
+    position: relative;
+    top: 0.1em;
+    padding-right: 5px;
+    font-family: FontAwesome;
+    content: "\f08e";
+  }
+}
+
+.title-wrapper a.featured-link {
+  display: inline-block;
+}
