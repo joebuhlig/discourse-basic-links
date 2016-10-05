@@ -6,25 +6,28 @@
     display: none;
   }
 }
-
-#reply-control input.basic-links-url-field {
+.desktop-view #reply-control input.basic-links-url-field{
+  padding: 7px 10px;
   margin: 6px 10px 3px 0;
-  padding: 8px 10px;
-  width: 99%;
-  border: 1px solid white;
-  @media (min-width: 992px) {
-    & {
-      width: 860px;
-      color: #222222;
-      padding: 7px 10px;
-    }
-  }
+  color: $primary;
+  box-sizing: initial;
+  border: initial;
+  width:842px;
 }
-
-a.featured-link {
+#reply-control input.basic-links-url-field {
+  padding: 5px;
+  margin-top: 6px;
+  width: 99%;
+  box-sizing: border-box;
+  border: 1px solid $secondary;
+}
+.basic-links.topic-title a{
+  margin-top: 5px;
+}
+.basic-links a {
   display: inline-block;
   text-transform: lowercase;
-  color: #858585;
+  color: dark-light-diff($primary, $secondary, 45%, -30%);
   font-size: 0.875rem;
 
   &::before {

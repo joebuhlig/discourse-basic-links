@@ -1,4 +1,7 @@
 en:
+  site_settings:
+    basic_links_enabled: "Give the option to add links to topics?"
+    basic_links_open_links_externally: "Open links in new tabs or windows?"
   js:
     basic_links:
       placeholder: "Enter URL (http://joebuhlig.com)"

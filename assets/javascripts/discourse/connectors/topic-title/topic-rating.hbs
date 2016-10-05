@@ -1,5 +1,11 @@
 {{#if siteSettings.basic_links_enabled}}
     {{#if model.can_add_link}}
-    <span class="title-text"><a href="{{model.basic_links_url}}">{{model.basic_links_domain}}</a></span>
+    <span class="basic-links topic-title">
+ 		{{#if context.siteSettings.basic_links_open_links_externally }}
+ 		<a href="{{model.basic_links_url}}" target="_blank">{{model.basic_links_domain}}</a>
+		{{else}}
+	    <a href="{{model.basic_links_url}}">{{model.basic_links_domain}}</a>
+	    {{/if}}
+    </span>
   {{/if}}
 {{/if}}
