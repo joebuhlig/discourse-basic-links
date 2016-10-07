@@ -1,6 +1,6 @@
 # discourse-basic-links
 
-A Discourse plugin that lets you add a link to a topic. [Read more about this plugin on Discourse Meta](https://meta.discourse.org/t/topic-star-ratings/39578).
+A Discourse plugin that lets you add a link to a topic. [Read more about this plugin on Discourse Meta](https://meta.discourse.org/t/basic-links-plugin/51222).
 ## Installation
 
 To install using docker, add the following to your app.yml in the plugins section:
