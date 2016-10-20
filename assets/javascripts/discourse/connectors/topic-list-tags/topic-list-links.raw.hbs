@@ -1,5 +1,5 @@
 {{#if context.siteSettings.basic_links_enabled}}
-    {{#if context.topic.can_add_link}}
+    {{#if context.topic.basic_links_url}}
     	<span class="basic-links"> - 
     		{{#if context.siteSettings.basic_links_open_links_externally }}
 	 		<a href="{{context.topic.basic_links_url}}" target="_blank">{{context.topic.basic_links_domain}}</a>
