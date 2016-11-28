@@ -2,7 +2,6 @@ import Topic from 'discourse/models/topic';
 import TopicController from 'discourse/controllers/topic';
 import TopicRoute from 'discourse/routes/topic';
 import ComposerController from 'discourse/controllers/composer';
-import ComposerView from 'discourse/views/composer';
 import Composer from 'discourse/models/composer';
 import Post from 'discourse/models/post';
 import { registerUnbound } from 'discourse-common/lib/helpers';
@@ -97,13 +96,13 @@ export default {
         if (!model) {return false}
         var topic = model.get('topic'),
             post = model.get('post'),
-            firstPost = Boolean(post && post.get('firstPost'));
+            firstPost = Boolean(post && post.get('firstPost')),
+            category = $.grep(this.site.categories, function(e){return e.id === model.get('categoryId')});
         if ((firstPost && topic.can_add_link) || !topic) {
-          var category = this.site.categories.findProperty('id', model.get('categoryId'));
-          return Boolean(category && category.basic_links_enabled);
+          return Boolean(category[0] && category[0].basic_links_enabled);
         }
         if (topic.can_add_link && (model.get('action') !== Composer.REPLY)) {return true}
-        if (model && model.get('categoryId') && (model.get('action') !== Composer.REPLY) && this.site.categories.findProperty('id', model.get('categoryId')).basic_links_enabled){return true}
+        if (model && model.get('categoryId') && (model.get('action') !== Composer.REPLY) && category[0].basic_links_enabled){return true}
         return Boolean(topic.can_add_link && (model.get('action') === Composer.EDIT))
       }.property('model.topic', 'model.categoryId', 'model.tags', 'model.post'),
 
@@ -137,7 +136,6 @@ export default {
       }.observes('model.composeState'),
 
       saveLink: function(topic_id, basic_links_url) {
-        console.log("***********saveLink***********");
         var topic = this.topic;
         if (!topic){
           var topic_id = topic_id;
@@ -157,16 +155,11 @@ export default {
         }).catch(function (error) {
           popupAjaxError(error);
         });
-      }
+      },
 
-    })
-
-    ComposerView.reopen({
       resizeIfShowBasicLinksInput: function() {
-        if (this.get('composeState') === Composer.OPEN) {
-          this.resize()
-        }
-      }.observes('controller.showBasicLinksInput')
+        this.appEvents.trigger('composer:resize');
+      }.observes('model.post', 'showBasicLinksInput')
     })
 
   }
